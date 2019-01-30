@@ -1,4 +1,4 @@
-#N canvas 316 199 1920 982 10;
+#N canvas 1 177 1920 982 10;
 #X obj 456 64 s start;
 #X obj 456 23 loadbang;
 #X obj 456 45 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
@@ -6,7 +6,7 @@
 #X obj 147 70 openpanel;
 #X obj 147 51 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
 -1;
-#X symbolatom 122 176 40 0 0 0 - - -, f 40;
+#X symbolatom 203 159 40 0 0 0 - - -, f 40;
 #X obj 126 73 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
 -1;
 #X obj 803 606 s bpm;
@@ -95,13 +95,13 @@
 #X text 49 4 <-- 1 bang to open sample and start playback;
 #X floatatom 127 437 5 0 0 0 - - -, f 5;
 #X obj 53 697 vsl 15 400 0 1 0 0 empty empty grain-position -24 -32
-0 8 -241291 -258699 -143491 20469 0;
+0 8 -241291 -258699 -143491 0 0;
 #X obj 168 680 vsl 15 400 0 1 0 0 empty empty empty 20 8 0 8 -44926
--258699 -1 1300 1;
-#N canvas 504 93 306 212 grainpos-calc 0;
+-258699 -1 0 1;
+#N canvas 504 136 306 212 grainpos-calc 0;
 #X obj 40 22 inlet;
 #X obj 102 22 inlet;
-#X obj 132 81 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 1 1
+#X obj 132 81 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
 #X obj 45 146 s grainposition;
 #X obj 132 59 > 0;
@@ -207,7 +207,7 @@ left and right limits;
 #X connect 4 0 3 1;
 #X restore 140 555 pd bang-timer;
 #X obj 237 679 vsl 15 400 0.0001 1 1 1 empty empty grain-size -12 -16
-0 8 -241291 -258699 -143491 9250 1;
+0 8 -241291 -258699 -143491 14050 1;
 #X obj 262 680 vsl 15 400 0 1 0 1 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
 #X obj 287 533 r start;
@@ -327,11 +327,11 @@ where x is on the second inlet. defaults to 100ms per random value
 #X obj 445 1249 s play-grain-density;
 #X msg 401 622 1;
 #X obj 319 680 vsl 15 400 0.01 20 1 1 empty empty grain-transpose -24
--32 0 8 -241291 -258699 -143491 20074 1;
+-32 0 8 -241291 -258699 -143491 24174 1;
 #X obj 348 680 vsl 15 400 0.01 1 1 0 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
 #X obj 485 954 vsl 15 128 0 1 0 0 empty empty grain-pan -12 -24 0 8
--241291 -258699 -143491 12700 1;
+-241291 -258699 -143491 381 1;
 #X obj 510 954 vsl 15 128 0 1 0 0 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
 #X obj 541 892 r start;
@@ -596,11 +596,10 @@ less than the previous input.;
 8 16 0 8 -241291 -1 0;
 #X obj 233 1198 r grainsize;
 #X obj 318 1222 nbx 5 14 0.01 50 0 0 empty empty empty 0 -6 0 10 -241291
--1 -1 0.451494 256;
+-1 -1 1 256;
 #X obj 238 1222 nbx 5 14 1 96000 0 0 empty empty empty 0 -6 0 10 -241291
--1 -1 158.005 256;
+-1 -1 5064.53 256;
 #X msg 247 1109 1;
-#X msg 319 656 1;
 #X msg 429 622 5;
 #X msg 223 632 0.01;
 #X obj 239 467 nbx 5 14 -50 50 0 0 empty empty empty 0 -6 0 10 -241291
@@ -610,13 +609,14 @@ less than the previous input.;
 #X obj 651 820 outlet~;
 #X obj 263 207 loadbang;
 #X msg 196 422 0;
-#X msg 242 317 YYY.wav;
 #X obj 1093 46 inlet;
 #X obj 1093 69 s \$0-position;
 #X obj 53 623 r \$0-position;
 #X obj 1273 43 inlet;
 #X obj 1273 85 s \$0-volume;
 #X obj 786 853 r \$0-volume;
+#X msg 319 656 1;
+#X msg 242 317 ../../WAV/Knacker_1.wav;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
@@ -628,20 +628,20 @@ less than the previous input.;
 #X connect 14 0 13 0;
 #X connect 17 0 18 0;
 #X connect 21 0 9 0;
-#X connect 23 0 92 0;
+#X connect 23 0 98 0;
 #X connect 26 0 28 0;
-#X connect 26 0 87 0;
+#X connect 26 0 86 0;
 #X connect 27 0 28 1;
 #X connect 30 0 29 0;
 #X connect 31 0 34 1;
 #X connect 32 0 34 2;
-#X connect 33 0 85 0;
-#X connect 33 0 83 0;
+#X connect 33 0 84 0;
+#X connect 33 0 97 0;
 #X connect 33 0 62 0;
 #X connect 33 0 63 0;
 #X connect 33 0 65 0;
 #X connect 33 0 40 0;
-#X connect 33 0 84 0;
+#X connect 33 0 83 0;
 #X connect 35 0 36 0;
 #X connect 36 0 34 0;
 #X connect 37 0 66 0;
@@ -663,8 +663,8 @@ less than the previous input.;
 #X connect 54 0 50 0;
 #X connect 56 0 59 3;
 #X connect 57 0 59 0;
-#X connect 59 0 88 0;
-#X connect 59 1 89 0;
+#X connect 59 0 87 0;
+#X connect 59 1 88 0;
 #X connect 59 2 58 0;
 #X connect 60 0 61 0;
 #X connect 62 0 32 0;
@@ -674,26 +674,26 @@ less than the previous input.;
 #X connect 66 0 39 0;
 #X connect 67 0 71 0;
 #X connect 68 0 65 0;
-#X connect 69 0 85 0;
+#X connect 69 0 84 0;
 #X connect 70 0 62 0;
-#X connect 72 0 83 0;
+#X connect 72 0 97 0;
 #X connect 73 0 63 0;
-#X connect 74 0 84 0;
+#X connect 74 0 83 0;
 #X connect 75 0 47 0;
 #X connect 76 0 64 0;
 #X connect 79 0 81 0;
 #X connect 80 0 48 1;
 #X connect 82 0 48 0;
-#X connect 83 0 41 0;
-#X connect 84 0 37 0;
-#X connect 85 0 31 0;
-#X connect 86 0 38 0;
-#X connect 90 0 92 0;
-#X connect 91 0 38 0;
-#X connect 92 0 59 0;
-#X connect 92 0 40 0;
-#X connect 93 0 94 0;
-#X connect 95 0 26 0;
-#X connect 96 0 97 0;
-#X connect 98 0 43 0;
+#X connect 83 0 37 0;
+#X connect 84 0 31 0;
+#X connect 85 0 38 0;
+#X connect 89 0 98 0;
+#X connect 90 0 38 0;
+#X connect 91 0 92 0;
+#X connect 93 0 26 0;
+#X connect 94 0 95 0;
+#X connect 96 0 43 0;
+#X connect 97 0 41 0;
+#X connect 98 0 59 0;
+#X connect 98 0 40 0;
 #X coords 0 -1 1 1 85 60 1 100 100;

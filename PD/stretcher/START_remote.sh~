@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+#
+pd  -noaudio -alsamidi Orchester_REMOTE.pd &
+#
+sleep 1
+#
+LD_PREL~/TMP/LeapDeveloperKit_2.3.1+31549_linux/LeapSDK/lib/x64/libLeap.so pd  -noaudio -nomidi leap_MAIN.pd &
+#
+sleep 1
+#
+# aj-snapshot -r -x orchester-remote.snap
+#
+sudo leapd --force_robust_mode 1 --websockets_enabled 0

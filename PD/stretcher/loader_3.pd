@@ -1,0 +1,16 @@
+#N canvas 833 311 763 526 10;
+#X obj 73 -62 bng 30 250 50 0 empty load_2 empty 17 7 0 30 -262144
+-1 -1;
+#X obj 333 217 send $loadfile4;
+#X obj 330 189 send $loadfile3;
+#X msg 187 30 G11_A.wav;
+#X obj 337 133 send $loadfile1a;
+#X obj 335 158 send $loadfile2a;
+#X msg 190 5 G12_B.wav;
+#X msg 196 57 G18_A.wav;
+#X connect 0 0 6 0;
+#X connect 0 0 7 0;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;

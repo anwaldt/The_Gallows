@@ -1,17 +1,17 @@
-#N canvas 1 177 1920 982 10;
-#X obj 456 64 s start;
-#X obj 456 23 loadbang;
-#X obj 456 45 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
+#N canvas 1920 58 1920 1022 10;
+#X obj -41 -180 s start;
+#X obj -41 -221 loadbang;
+#X obj -41 -199 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
 -1;
-#X obj 147 70 openpanel;
-#X obj 147 51 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
--1;
-#X symbolatom 203 159 40 0 0 0 - - -, f 40;
-#X obj 126 73 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
--1;
-#X obj 803 606 s bpm;
-#X floatatom 803 578 5 0 0 0 - - -, f 5;
-#X msg 803 556 120;
+#X obj -350 -174 openpanel;
+#X obj -350 -193 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198
+-1 -1;
+#X symbolatom -294 -85 40 0 0 0 - - -, f 40;
+#X obj -371 -171 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144
+-1 -1;
+#X obj 306 362 s bpm;
+#X floatatom 306 334 5 0 0 0 - - -, f 5;
+#X msg 306 312 120;
 #N canvas 0 50 298 306 bpm-to-playrate 0;
 #X obj 122 33 r samplesize;
 #X obj 38 34 r bpm;
@@ -52,9 +52,9 @@
 #X connect 14 0 13 0;
 #X connect 14 1 13 1;
 #X connect 16 0 6 0;
-#X restore 805 660 pd bpm-to-playrate;
-#X floatatom 805 682 5 0 0 0 - - -, f 5;
-#X obj 820 735 s playrate;
+#X restore 308 416 pd bpm-to-playrate;
+#X floatatom 308 438 5 0 0 0 - - -, f 5;
+#X obj 323 491 s playrate;
 #N canvas 0 50 274 288 tap-bpm 0;
 #X obj 47 26 inlet;
 #X obj 45 68 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
@@ -77,26 +77,26 @@
 #X connect 5 0 4 1;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
-#X restore 859 557 pd tap-bpm;
-#X obj 859 537 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
+#X restore 362 313 pd tap-bpm;
+#X obj 362 293 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
 -1;
-#X obj 857 607 s bpm;
-#X floatatom 858 579 5 0 0 0 - - -, f 5;
-#X obj 456 100 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+#X obj 360 363 s bpm;
+#X floatatom 361 335 5 0 0 0 - - -, f 5;
+#X obj -41 -144 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
 -1;
-#X obj 456 118 s retrigger;
-#X text 881 534 <-- tap bpm button;
-#X text 181 50 <-- bang to open loop sample;
-#X obj 797 532 r start;
-#X text 796 458 some other fun tools to patch in to the play-rate parameter
+#X obj -41 -126 s retrigger;
+#X text 384 290 <-- tap bpm button;
+#X text -316 -194 <-- bang to open loop sample;
+#X obj 300 288 r start;
+#X text 299 214 some other fun tools to patch in to the play-rate parameter
 ;
-#X obj 25 9 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1 -1
-;
-#X text 49 4 <-- 1 bang to open sample and start playback;
-#X floatatom 127 437 5 0 0 0 - - -, f 5;
-#X obj 53 697 vsl 15 400 0 1 0 0 empty empty grain-position -24 -32
+#X obj -472 -235 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198
+-1 -1;
+#X text -448 -240 <-- 1 bang to open sample and start playback;
+#X floatatom -370 193 5 0 0 0 - - -, f 5;
+#X obj -444 453 vsl 15 400 0 1 0 0 empty empty grain-position -24 -32
 0 8 -241291 -258699 -143491 0 0;
-#X obj 168 680 vsl 15 400 0 1 0 0 empty empty empty 20 8 0 8 -44926
+#X obj -329 436 vsl 15 400 0 1 0 0 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
 #N canvas 504 136 306 212 grainpos-calc 0;
 #X obj 40 22 inlet;
@@ -188,8 +188,8 @@ left and right limits;
 #X connect 5 0 6 1;
 #X connect 6 0 7 2;
 #X connect 7 0 3 0;
-#X restore 66 1167 pd grainpos-calc;
-#X obj 140 577 s random-rate;
+#X restore -431 923 pd grainpos-calc;
+#X obj -357 333 s random-rate;
 #N canvas 536 50 454 304 bang-timer 0;
 #X obj 47 26 inlet;
 #X obj 45 68 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
@@ -205,12 +205,12 @@ left and right limits;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 1;
-#X restore 140 555 pd bang-timer;
-#X obj 237 679 vsl 15 400 0.0001 1 1 1 empty empty grain-size -12 -16
-0 8 -241291 -258699 -143491 19950 1;
-#X obj 262 680 vsl 15 400 0 1 0 1 empty empty empty 20 8 0 8 -44926
+#X restore -357 311 pd bang-timer;
+#X obj -260 435 vsl 15 400 0.0001 1 1 1 empty empty grain-size -12
+-16 0 8 -241291 -258699 -143491 20189 1;
+#X obj -235 436 vsl 15 400 0 1 0 1 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
-#X obj 287 533 r start;
+#X obj -210 289 r start;
 #N canvas 768 50 380 346 grainsize-calc 0;
 #X obj 164 94 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
@@ -318,25 +318,25 @@ where x is on the second inlet. defaults to 100ms per random value
 #X connect 12 0 14 1;
 #X connect 13 0 6 0;
 #X connect 14 0 13 2;
-#X restore 123 1131 pd grainsize-calc;
-#X obj 123 1087 r samplesize;
-#X obj 123 1109 / 2;
-#X obj 427 680 vsl 15 400 0.01 30 1 1 empty empty grain-density -24
+#X restore -374 887 pd grainsize-calc;
+#X obj -374 843 r samplesize;
+#X obj -374 865 / 2;
+#X obj -70 436 vsl 15 400 0.01 30 1 1 empty empty grain-density -24
 -32 0 8 -241291 -258699 -143491 30971 0;
-#X obj 224 494 s playrate;
-#X obj 445 1249 s play-grain-density;
-#X msg 401 622 1;
-#X obj 319 680 vsl 15 400 0.01 20 1 1 empty empty grain-transpose -24
--32 0 8 -241291 -258699 -143491 24174 1;
-#X obj 348 680 vsl 15 400 0.01 1 1 0 empty empty empty 20 8 0 8 -44926
+#X obj -273 250 s playrate;
+#X obj -52 1005 s play-grain-density;
+#X msg -96 378 1;
+#X obj -178 436 vsl 15 400 0.01 20 1 1 empty empty grain-transpose
+-24 -32 0 8 -241291 -258699 -143491 27725 1;
+#X obj -149 436 vsl 15 400 0.01 1 1 0 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
-#X obj 485 954 vsl 15 128 0 1 0 0 empty empty grain-pan -12 -24 0 8
--241291 -258699 -143491 381 1;
-#X obj 510 954 vsl 15 128 0 1 0 0 empty empty empty 20 8 0 8 -44926
+#X obj -12 710 vsl 15 128 0 1 0 0 empty empty grain-pan -12 -24 0 8
+-241291 -258699 -143491 6350 1;
+#X obj 13 710 vsl 15 128 0 1 0 0 empty empty empty 20 8 0 8 -44926
 -258699 -1 0 1;
-#X obj 541 892 r start;
-#X obj 247 1089 r start;
-#X msg 485 930 0.5;
+#X obj 44 648 r start;
+#X obj -250 845 r start;
+#X msg -12 686 0.5;
 #N canvas 343 98 412 274 graintranspose-calc 0;
 #X obj 32 15 inlet;
 #X obj 158 17 inlet;
@@ -444,7 +444,7 @@ left and right limits;
 #X connect 12 0 13 1;
 #X connect 13 0 14 2;
 #X connect 14 0 8 0;
-#X restore 249 1161 pd graintranspose-calc;
+#X restore -248 917 pd graintranspose-calc;
 #N canvas 0 50 294 278 grainpan 0;
 #X obj 88 87 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
@@ -535,10 +535,10 @@ where x is on the second inlet. defaults to 100ms per random value
 #X connect 5 0 7 1;
 #X connect 6 0 1 0;
 #X connect 7 0 6 2;
-#X restore 485 1089 pd grainpan;
-#X obj 531 695 *;
-#X obj 531 673 t b f;
-#X obj 630 558 r grainposition;
+#X restore -12 845 pd grainpan;
+#X obj 34 451 *;
+#X obj 34 429 t b f;
+#X obj 133 314 r grainposition;
 #N canvas 0 50 414 318 up-or-dn 0;
 #X obj 18 132 <;
 #X obj 18 154 * -2;
@@ -555,68 +555,101 @@ less than the previous input.;
 #X connect 3 0 0 1;
 #X connect 3 1 0 0;
 #X connect 4 0 3 0;
-#X restore 531 651 pd up-or-dn;
-#X obj 504 544 r grainsize;
-#X msg 504 738 94;
-#X obj 670 514 r grainpan;
-#X obj 496 514 r graintranspose;
-#X obj 662 761 s samplesize;
-#X obj 485 716 nm-poly-stereo-grain 15;
-#X obj 400 601 tgl 15 0 empty empty stop-start -16 -16 0 8 -241291
+#X restore 34 407 pd up-or-dn;
+#X obj 7 300 r grainsize;
+#X msg 7 494 94;
+#X obj 173 270 r grainpan;
+#X obj -1 270 r graintranspose;
+#X obj 165 517 s samplesize;
+#X obj -12 472 nm-poly-stereo-grain 15;
+#X obj -97 357 tgl 15 0 empty empty stop-start -16 -16 0 8 -241291
 -258699 -143491 0 1;
-#X obj 392 561 t b f;
-#X msg 264 630 0;
-#X msg 348 656 0;
-#X msg 510 930 0;
-#X msg 168 620 0;
-#X obj 444 1224 nbx 5 14 0.01 50 0 0 empty empty empty 0 -6 0 10 -241291
+#X obj -105 317 t b f;
+#X msg -233 386 0;
+#X msg -149 412 0;
+#X msg 13 686 0;
+#X msg -329 376 0;
+#X obj -53 980 nbx 5 14 0.01 50 0 0 empty empty empty 0 -6 0 10 -241291
 -1 -1 5 256;
-#X obj 142 599 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
+#X obj -355 355 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291
+-1 -1;
+#X obj -328 355 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
 -1;
-#X obj 169 599 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
+#X obj -260 357 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291
+-1 -1;
+#X obj -234 357 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
 -1;
-#X obj 237 601 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
+#X obj -268 333 s retrigger;
+#X obj -180 357 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291
+-1 -1;
+#X obj -150 357 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
 -1;
-#X obj 263 601 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
+#X obj -70 357 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
 -1;
-#X obj 229 577 s retrigger;
-#X obj 317 601 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
+#X obj -12 649 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
 -1;
-#X obj 347 601 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
+#X obj 14 649 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
 -1;
-#X obj 427 601 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
--1;
-#X obj 485 893 bng 15 250 50 0 empty empty empty 0 -6 0 8 -241291 -1
--1;
-#X obj 511 893 bng 15 250 50 0 empty empty empty 0 -6 0 8 -44926 -1
--1;
-#X obj 459 1140 cnv 15 220 30 empty empty blue-for-randomness-amount
+#X obj -38 896 cnv 15 220 30 empty empty blue-for-randomness-amount
 20 12 0 8 -241291 -62784 0;
-#X obj 461 589 cnv 15 230 30 empty empty <--buttons-reset-default-values
+#X obj -36 345 cnv 15 230 30 empty empty <--buttons-reset-default-values
 8 16 0 8 -241291 -1 0;
-#X obj 233 1198 r grainsize;
-#X obj 318 1222 nbx 5 14 0.01 50 0 0 empty empty empty 0 -6 0 10 -241291
--1 -1 1 256;
-#X obj 238 1222 nbx 5 14 1 96000 0 0 empty empty empty 0 -6 0 10 -241291
--1 -1 20000 256;
-#X msg 247 1109 1;
-#X msg 429 622 5;
-#X msg 223 632 0.01;
-#X obj 239 467 nbx 5 14 -50 50 0 0 empty empty empty 0 -6 0 10 -241291
+#X obj -264 954 r grainsize;
+#X obj -179 978 nbx 5 14 0.01 50 0 0 empty empty empty 0 -6 0 10 -241291
+-1 -1 1.9668 256;
+#X obj -259 978 nbx 5 14 1 96000 0 0 empty empty empty 0 -6 0 10 -241291
+-1 -1 7162.84 256;
+#X msg -250 865 1;
+#X msg -68 378 5;
+#X msg -274 388 0.01;
+#X obj -258 223 nbx 5 14 -50 50 0 0 empty empty empty 0 -6 0 10 -241291
 -1 -1 0 256;
-#X floatatom 53 1105 5 0 0 0 - - -, f 5;
-#X obj 513 840 outlet~;
-#X obj 651 820 outlet~;
-#X obj 263 207 loadbang;
-#X msg 196 422 0;
-#X obj 1093 46 inlet;
-#X obj 1093 69 s \$0-position;
-#X obj 53 623 r \$0-position;
-#X obj 1273 43 inlet;
-#X obj 1273 85 s \$0-volume;
-#X obj 786 853 r \$0-volume;
-#X msg 319 656 1;
-#X msg 242 317 ../../WAV/Knacker_1.wav;
+#X floatatom -444 861 5 0 0 0 - - -, f 5;
+#X obj 16 596 outlet~;
+#X obj 154 576 outlet~;
+#X obj -234 -37 loadbang;
+#X msg -301 178 0;
+#X obj 596 -198 inlet;
+#X obj 596 -175 s \$0-position;
+#X obj -444 379 r \$0-position;
+#X obj 776 -201 inlet;
+#X msg -178 412 1;
+#X msg -223 60 ../../WAV/ice-1.wav;
+#X obj 776 -159 s \$0-param1;
+#X obj 895 -201 inlet;
+#X obj 895 -159 s \$0-param2;
+#X obj 183 53 r \$0-param2;
+#X floatatom 183 113 5 0 0 0 - - -, f 5;
+#N canvas 2802 428 450 300 proc 0;
+#X obj 224 96 inlet;
+#X obj 224 188 outlet;
+#X obj 224 119 + 1;
+#X obj 224 165 + 0;
+#X obj 224 142 * 2;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X restore 262 176 pd proc;
+#X floatatom 262 199 5 0 0 0 - - -, f 5;
+#X obj -360 74 init \$1;
+#X obj -360 97 print LOADING;
+#X obj -5 94 r \$0-param1;
+#X floatatom -5 137 5 0 0 0 - - -, f 5;
+#N canvas 2802 428 450 300 proc 0;
+#X obj 224 96 inlet;
+#X obj 224 188 outlet;
+#X obj 224 119 + 1;
+#X obj 224 165 + 0;
+#X obj 224 142 * 0.01;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X restore -5 172 pd proc;
+#X floatatom -5 195 5 0 0 0 - - -, f 5;
+#X floatatom 183 76 5 0 0 0 - - -, f 5;
+#X obj 183 94 * 0.1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
@@ -628,7 +661,7 @@ less than the previous input.;
 #X connect 14 0 13 0;
 #X connect 17 0 18 0;
 #X connect 21 0 9 0;
-#X connect 23 0 98 0;
+#X connect 23 0 96 0;
 #X connect 26 0 28 0;
 #X connect 26 0 86 0;
 #X connect 27 0 28 1;
@@ -636,7 +669,7 @@ less than the previous input.;
 #X connect 31 0 34 1;
 #X connect 32 0 34 2;
 #X connect 33 0 84 0;
-#X connect 33 0 97 0;
+#X connect 33 0 95 0;
 #X connect 33 0 62 0;
 #X connect 33 0 63 0;
 #X connect 33 0 65 0;
@@ -676,7 +709,7 @@ less than the previous input.;
 #X connect 68 0 65 0;
 #X connect 69 0 84 0;
 #X connect 70 0 62 0;
-#X connect 72 0 97 0;
+#X connect 72 0 95 0;
 #X connect 73 0 63 0;
 #X connect 74 0 83 0;
 #X connect 75 0 47 0;
@@ -687,13 +720,26 @@ less than the previous input.;
 #X connect 83 0 37 0;
 #X connect 84 0 31 0;
 #X connect 85 0 38 0;
-#X connect 89 0 98 0;
+#X connect 89 0 96 0;
 #X connect 90 0 38 0;
 #X connect 91 0 92 0;
 #X connect 93 0 26 0;
-#X connect 94 0 95 0;
-#X connect 96 0 43 0;
-#X connect 97 0 41 0;
-#X connect 98 0 59 0;
-#X connect 98 0 40 0;
-#X coords 0 -1 1 1 85 60 1 100 100;
+#X connect 94 0 97 0;
+#X connect 95 0 41 0;
+#X connect 96 0 59 0;
+#X connect 96 0 40 0;
+#X connect 98 0 99 0;
+#X connect 100 0 110 0;
+#X connect 101 0 102 0;
+#X connect 102 0 103 0;
+#X connect 103 0 41 0;
+#X connect 104 0 105 0;
+#X connect 104 0 40 0;
+#X connect 104 0 59 0;
+#X connect 106 0 107 0;
+#X connect 107 0 108 0;
+#X connect 108 0 109 0;
+#X connect 109 0 31 0;
+#X connect 110 0 111 0;
+#X connect 111 0 101 0;
+#X coords 0 -1 1 1 123 123 1 100 100;

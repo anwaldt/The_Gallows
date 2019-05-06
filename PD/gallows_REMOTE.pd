@@ -1,0 +1,11 @@
+#N canvas 0 106 1366 662 10;
+#X declare -path string_controller;
+#X obj 17 58 declare -path string_controller;
+#X obj 454 91 string_controller;
+#X obj 454 186 s y;
+#X obj 611 192 s x;
+#X obj 768 189 s l;
+#X obj 578 373 udpsend;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;

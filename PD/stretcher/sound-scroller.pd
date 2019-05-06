@@ -1,4 +1,4 @@
-#N canvas 2108 272 1600 807 10;
+#N canvas 319 272 1600 807 10;
 #X floatatom 252 212 5 0 0 0 - transpo-set -, f 5;
 #X floatatom 136 219 7 0 0 0 - #0-location-set -, f 7;
 #X obj 239 507 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
@@ -440,8 +440,8 @@ and window-msec (analysis window size in seconds and msec).;
 #X obj 827 383 loadbang;
 #N canvas 2126 228 1600 821 insample_HvC 0;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X array \$0-sample 541696 float 0;
-#X coords 0 1 541695 -1 400 150 1;
+#X array \$0-sample 1.35578e+06 float 0;
+#X coords 0 1 1.35578e+06 -1 400 150 1;
 #X restore 281 135 graph;
 #X obj 28 184 unpack s f;
 #X obj 28 294 soundfiler;

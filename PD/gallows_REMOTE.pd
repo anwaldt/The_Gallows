@@ -5,7 +5,27 @@
 #X obj 454 186 s y;
 #X obj 611 192 s x;
 #X obj 768 189 s l;
-#X obj 578 373 udpsend;
+#X obj 610 514 udpsend;
+#X obj 456 366 r y;
+#X obj 608 357 r x;
+#X obj 765 354 r l;
+#X obj 603 449 packOSC;
+#X msg 608 380 /x \$1;
+#X msg 456 389 /y \$1;
+#X msg 765 377 /l \$1;
+#X msg 822 451 connect 10.11.1.200 4545;
+#X obj 123 250 vsl 15 128 -1 1 0 0 empty y empty 0 -9 0 10 -262144
+-1 -1 6474 1;
+#X obj 73 426 hsl 128 15 -1 1 0 0 empty x empty -2 -8 0 10 -262144
+-1 -1 6690 1;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X connect 1 2 4 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 12 0;
+#X connect 9 0 5 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 5 0;

@@ -1,4 +1,4 @@
-#N canvas 2506 344 1304 660 10;
+#N canvas 61 107 1304 660 10;
 #X obj 434 -162 loadbang;
 #X obj 336 -136 inlet;
 #X obj 170 -47 comport;
@@ -24,6 +24,7 @@
 #X floatatom 603 118 5 0 0 0 - - -, f 5;
 #X obj 603 95 min 1;
 #X obj 603 140 max 0;
+#X obj 219 83 + 0.2;
 #X connect 0 0 13 0;
 #X connect 0 0 16 0;
 #X connect 1 0 2 0;
@@ -35,7 +36,7 @@
 #X connect 5 0 6 0;
 #X connect 6 0 10 0;
 #X connect 7 0 11 0;
-#X connect 8 0 7 0;
+#X connect 8 0 25 0;
 #X connect 9 0 18 0;
 #X connect 9 0 19 0;
 #X connect 13 0 2 0;
@@ -48,4 +49,5 @@
 #X connect 22 0 24 0;
 #X connect 23 0 22 0;
 #X connect 24 0 20 0;
+#X connect 25 0 7 0;
 #X coords 0 -1 1 1 321 77 1 100 100;

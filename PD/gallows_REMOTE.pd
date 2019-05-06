@@ -1,31 +1,81 @@
 #N canvas 0 106 1366 662 10;
 #X declare -path string_controller;
 #X obj 17 58 declare -path string_controller;
-#X obj 454 91 string_controller;
-#X obj 454 186 s y;
-#X obj 611 192 s x;
-#X obj 768 189 s l;
-#X obj 610 514 udpsend;
-#X obj 456 366 r y;
-#X obj 608 357 r x;
-#X obj 765 354 r l;
-#X obj 603 449 packOSC;
-#X msg 608 380 /x \$1;
-#X msg 456 389 /y \$1;
-#X msg 765 377 /l \$1;
-#X msg 822 451 connect 10.11.1.200 4545;
-#X obj 123 250 vsl 15 128 -1 1 0 0 empty y empty 0 -9 0 10 -262144
--1 -1 6474 1;
-#X obj 73 426 hsl 128 15 -1 1 0 0 empty x empty -2 -8 0 10 -262144
--1 -1 6690 1;
+#X obj 204 89 string_controller;
+#X obj 204 184 s y;
+#X obj 361 190 s x;
+#X obj 518 187 s l;
+#X obj 90 71 vsl 30 128 -1 1 0 0 empty y empty 0 -9 0 10 -4160 -1 -1
+5755 1;
+#X obj 38 203 hsl 128 30 -1 1 0 0 empty x empty -2 -8 0 10 -4032 -1
+-1 6591 1;
+#X obj 1084 151 bng 15 250 50 0 inst_2 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 944 110 bng 50 250 50 0 inst_1 empty WAVES 0 -10 0 10 -257985
+-1 -1;
+#X obj 1084 151 bng 15 250 50 0 inst_2 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1159 158 bng 15 250 50 0 inst_3 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1159 158 bng 15 250 50 0 inst_2 empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 1 106 450 300 ardour 0;
+#X obj 202 332 packOSC;
+#X obj 202 355 udpsend;
+#X msg 42 313 connect 10.11.1.200 3819;
+#X msg 278 315 disconnect;
+#X msg 114 235 /transport_play;
+#X msg 220 191 /transport_stop;
+#X obj 98 276 loadbang;
+#X obj 137 132 bng 50 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 217 129 bng 50 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X coords 0 -1 1 1 200 100 1 100 100;
+#X restore 102 346 pd ardour;
+#N canvas 0 106 1366 662 OSC 0;
+#X obj 230 245 udpsend;
+#X obj 76 97 r y;
+#X obj 228 88 r x;
+#X obj 385 85 r l;
+#X obj 267 186 packOSC;
+#X msg 228 111 /x \$1;
+#X msg 76 120 /y \$1;
+#X msg 385 108 /l \$1;
+#X msg 442 182 connect 10.11.1.200 4545;
+#X obj 705 57 r inst_1;
+#X msg 705 80 /load 1;
+#X msg 653 187 disconnect;
+#X obj 796 62 r inst_2;
+#X msg 796 85 /load 2;
+#X obj 849 117 r inst_3;
+#X msg 849 140 /load 3;
+#X obj 491 152 loadbang;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 16 0 8 0;
+#X restore 915 432 pd OSC;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X connect 1 2 4 0;
-#X connect 6 0 11 0;
-#X connect 7 0 10 0;
-#X connect 8 0 12 0;
-#X connect 9 0 5 0;
-#X connect 10 0 9 0;
-#X connect 11 0 9 0;
-#X connect 12 0 9 0;
-#X connect 13 0 5 0;

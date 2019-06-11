@@ -6,20 +6,16 @@
 #X obj 361 190 s x;
 #X obj 518 187 s l;
 #X obj 90 71 vsl 30 128 -1 1 0 0 empty y empty 0 -9 0 10 -4160 -1 -1
-5755 1;
+5135 1;
 #X obj 38 203 hsl 128 30 -1 1 0 0 empty x empty -2 -8 0 10 -4032 -1
--1 6591 1;
-#X obj 1084 151 bng 15 250 50 0 inst_2 empty empty 17 7 0 10 -262144
+-1 6169 1;
+#X obj 1050 67 bng 50 250 50 0 inst_6 empty KAPUTT 0 -10 0 10 -232576
 -1 -1;
-#X obj 944 110 bng 50 250 50 0 inst_1 empty WAVES 0 -10 0 10 -257985
+#X obj 762 58 bng 50 250 50 0 inst_1 empty WAVES 0 -10 0 10 -257985
 -1 -1;
-#X obj 1084 151 bng 15 250 50 0 inst_2 empty empty 17 7 0 10 -262144
+#X obj 952 231 bng 66 250 50 0 inst_0 empty OFF 0 -10 0 10 -258113
 -1 -1;
-#X obj 1159 158 bng 15 250 50 0 inst_3 empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 1159 158 bng 15 250 50 0 inst_2 empty empty 17 7 0 10 -262144
--1 -1;
-#N canvas 1 106 450 300 ardour 0;
+#N canvas 1 106 450 300 ardour 1;
 #X obj 202 332 packOSC;
 #X obj 202 355 udpsend;
 #X msg 42 313 connect 10.11.1.200 3819;
@@ -42,23 +38,36 @@
 #X coords 0 -1 1 1 200 100 1 100 100;
 #X restore 102 346 pd ardour;
 #N canvas 0 106 1366 662 OSC 0;
-#X obj 230 245 udpsend;
-#X obj 76 97 r y;
-#X obj 228 88 r x;
-#X obj 385 85 r l;
-#X obj 267 186 packOSC;
-#X msg 228 111 /x \$1;
-#X msg 76 120 /y \$1;
-#X msg 385 108 /l \$1;
-#X msg 442 182 connect 10.11.1.200 4545;
-#X obj 705 57 r inst_1;
-#X msg 705 80 /load 1;
-#X msg 653 187 disconnect;
-#X obj 796 62 r inst_2;
-#X msg 796 85 /load 2;
-#X obj 849 117 r inst_3;
-#X msg 849 140 /load 3;
-#X obj 491 152 loadbang;
+#X obj 10 476 udpsend;
+#X obj -279 222 r y;
+#X obj -127 213 r x;
+#X obj 30 210 r l;
+#X obj 216 408 packOSC;
+#X msg -127 236 /x \$1;
+#X msg -279 245 /y \$1;
+#X msg 30 233 /l \$1;
+#X msg 87 307 connect 10.11.1.200 4545;
+#X obj 350 182 r inst_1;
+#X msg 350 205 /load 1;
+#X msg 298 312 disconnect;
+#X obj 441 187 r inst_2;
+#X msg 441 210 /load 2;
+#X obj 494 242 r inst_3;
+#X msg 494 265 /load 3;
+#X obj 136 277 loadbang;
+#X obj 171 166 bng 30 250 50 0 empty empty RECONNECT_OSC -50 -10 0
+16 -4034 -1 -1;
+#X obj 111 237 delay 100;
+#X obj 248 229 bng 30 250 50 0 empty empty DISCONNECT -50 -10 0 16
+-258113 -1 -1;
+#X msg 584 257 /load 4;
+#X obj 584 234 r inst_4;
+#X obj 699 236 r inst_5;
+#X msg 699 259 /load 5;
+#X obj 813 242 r inst_6;
+#X msg 813 265 /load 6;
+#X msg 917 341 /load 0;
+#X obj 917 318 r inst_0;
 #X connect 1 0 6 0;
 #X connect 2 0 5 0;
 #X connect 3 0 7 0;
@@ -75,7 +84,28 @@
 #X connect 14 0 15 0;
 #X connect 15 0 4 0;
 #X connect 16 0 8 0;
-#X restore 915 432 pd OSC;
+#X connect 17 0 18 0;
+#X connect 17 0 11 0;
+#X connect 18 0 8 0;
+#X connect 19 0 11 0;
+#X connect 20 0 4 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 4 0;
+#X connect 24 0 25 0;
+#X connect 25 0 4 0;
+#X connect 26 0 4 0;
+#X connect 27 0 26 0;
+#X coords 0 -1 1 1 200 200 1 100 100;
+#X restore 916 428 pd OSC;
+#X obj 1262 580 bng 50 250 50 0 inst_2 empty TROLLEY 0 -10 0 10 -261234
+-1 -1;
+#X obj 985 68 bng 50 250 50 0 inst_4 empty DOGS 0 -10 0 10 -159808
+-1 -1;
+#X obj 859 57 bng 50 250 50 0 inst_5 empty GLASS 0 -10 0 10 -204786
+-1 -1;
+#X obj 1135 61 bng 50 250 50 0 inst_3 empty BELLS 0 -10 0 10 -4032
+-1 -1;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X connect 1 2 4 0;

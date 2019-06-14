@@ -1,4 +1,4 @@
-#N canvas 0 106 1920 974 10;
+#N canvas 1 106 1920 974 10;
 #X declare -path stretcher;
 #X floatatom 62 260 5 0 0 0 - - -, f 5;
 #X obj 62 214 r l;
@@ -6,56 +6,30 @@
 #X floatatom 860 111 5 0 0 0 - - -, f 5;
 #X obj 860 65 r l;
 #X obj 1409 94 r x;
-#X obj 487 691 r y;
-#X obj 487 714 + 1;
-#X floatatom 487 737 5 0 0 0 - - -, f 5;
-#X obj 502 879 *~;
-#X obj 559 871 *~;
-#X obj 511 921 dac~ 1 2 3 4;
 #X floatatom 899 479 5 0 0 0 - - -, f 5;
 #X obj 899 433 r l;
 #X obj 1448 462 r x;
-#X obj 674 890 *~;
-#X obj 731 882 *~;
 #X floatatom 1019 756 5 0 0 0 - - -, f 5;
 #X obj 1019 710 r l;
 #X obj 1568 739 r x;
 #X obj 16 15 declare -path stretcher;
-#X obj 63 290 sound-scroller ../../WAV/shore-1.wav 4096 20 20000 500
+#X obj 63 290 sound-scroller ../../WAV/shore-1.wav 4096 20 10000 0
 ;
-#X obj 861 141 sound-scroller ../../WAV/shore-2.wav 4096 20 20000 500
+#X obj 861 141 sound-scroller ../../WAV/shore-2.wav 4096 20 10000 0
 ;
-#X obj 900 509 sound-scroller ../../WAV/shore-3.wav 4096 20 20000 500
+#X obj 901 508 sound-scroller ../../WAV/shore-3.wav 4096 20 10000 0
 ;
-#X obj 1020 786 sound-scroller ../../WAV/shore-4.wav 4096 20 20000
-500;
-#X obj 527 822 * 2;
-#X obj 699 833 * 2;
-#X connect 0 0 21 0;
+#X obj 1020 786 sound-scroller ../../WAV/shore-4.wav 4096 20 10000
+0;
+#X connect 0 0 13 0;
 #X connect 1 0 0 0;
-#X connect 2 0 21 1;
-#X connect 3 0 22 0;
+#X connect 2 0 13 1;
+#X connect 3 0 14 0;
 #X connect 4 0 3 0;
-#X connect 5 0 22 1;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 25 0;
-#X connect 8 0 26 0;
-#X connect 9 0 11 0;
-#X connect 10 0 11 1;
-#X connect 12 0 23 0;
-#X connect 13 0 12 0;
-#X connect 14 0 23 1;
-#X connect 15 0 11 2;
-#X connect 16 0 11 3;
-#X connect 17 0 24 0;
-#X connect 18 0 17 0;
-#X connect 19 0 24 1;
-#X connect 21 0 9 0;
-#X connect 22 0 10 0;
-#X connect 23 0 15 0;
-#X connect 24 0 16 0;
-#X connect 25 0 9 1;
-#X connect 25 0 10 1;
-#X connect 26 0 15 1;
-#X connect 26 0 16 1;
+#X connect 5 0 14 1;
+#X connect 6 0 15 0;
+#X connect 7 0 6 0;
+#X connect 8 0 15 1;
+#X connect 9 0 16 0;
+#X connect 10 0 9 0;
+#X connect 11 0 16 1;

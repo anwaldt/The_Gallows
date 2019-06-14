@@ -1,0 +1,47 @@
+#N canvas 0 106 1920 974 10;
+#X declare -path NM_Grainer_2;
+#X obj 301 90 r y;
+#X obj 202 97 r l;
+#X obj 441 99 r x;
+#X obj 246 331 dac~ 1 2;
+#X obj 16 36 declare -path NM_Grainer_2;
+#X obj 775 144 r y;
+#X obj 676 151 r l;
+#X obj 915 153 r x;
+#X obj 727 372 dac~ 3 4;
+#X obj 422 526 r y;
+#X obj 323 533 r l;
+#X obj 562 535 r x;
+#X obj 367 767 dac~ 1 2;
+#X obj 896 580 r y;
+#X obj 797 587 r l;
+#X obj 1036 589 r x;
+#X obj 848 808 dac~ 3 4;
+#X obj 163 168 nm-grainer ../../WAV/DOGS_DOG-1.wav 0.06 0.05 0.7 -1
+;
+#X obj 637 222 nm-grainer ../../WAV/DOGS_DOG-2.wav 0.06 0.01 -0.7 -1
+;
+#X obj 284 604 nm-grainer ../../WAV/DOGS_DOG-3.wav 0.06 0.05 0.7 -1
+;
+#X obj 758 658 nm-grainer ../../WAV/DOGS_DOG-4.wav 0.05 0.01 -0.7 -1
+;
+#X connect 0 0 17 1;
+#X connect 1 0 17 0;
+#X connect 2 0 17 2;
+#X connect 5 0 18 1;
+#X connect 6 0 18 0;
+#X connect 7 0 18 2;
+#X connect 9 0 19 1;
+#X connect 10 0 19 0;
+#X connect 11 0 19 2;
+#X connect 13 0 20 1;
+#X connect 14 0 20 0;
+#X connect 15 0 20 2;
+#X connect 17 0 3 0;
+#X connect 17 1 3 1;
+#X connect 18 0 8 0;
+#X connect 18 1 8 1;
+#X connect 19 0 12 0;
+#X connect 19 1 12 1;
+#X connect 20 0 16 0;
+#X connect 20 1 16 1;

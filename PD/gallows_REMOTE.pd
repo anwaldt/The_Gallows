@@ -1,21 +1,13 @@
-#N canvas 0 106 1366 662 10;
+#N canvas 537 699 1524 740 10;
 #X declare -path string_controller;
-#X obj 17 58 declare -path string_controller;
-#X obj 204 89 string_controller;
-#X obj 204 184 s y;
-#X obj 361 190 s x;
-#X obj 518 187 s l;
-#X obj 90 71 vsl 30 128 -1 1 0 0 empty y empty 0 -9 0 10 -4160 -1 -1
-5135 1;
-#X obj 38 203 hsl 128 30 -1 1 0 0 empty x empty -2 -8 0 10 -4032 -1
--1 6169 1;
-#X obj 1050 67 bng 50 250 50 0 inst_6 empty KAPUTT 0 -10 0 10 -232576
+#X obj 1080 206 declare -path string_controller;
+#X obj 1309 665 bng 50 250 50 0 inst_6 empty KAPUTT 0 -10 0 10 -232576
 -1 -1;
-#X obj 762 58 bng 50 250 50 0 inst_1 empty WAVES 0 -10 0 10 -257985
+#X obj 1021 656 bng 50 250 50 0 inst_1 empty WAVES 0 -10 0 10 -257985
 -1 -1;
 #X obj 952 231 bng 66 250 50 0 inst_0 empty OFF 0 -10 0 10 -258113
 -1 -1;
-#N canvas 1 106 450 300 ardour 1;
+#N canvas 1 106 450 300 ardour 0;
 #X obj 202 332 packOSC;
 #X obj 202 355 udpsend;
 #X msg 42 313 connect 10.11.1.200 3819;
@@ -36,17 +28,10 @@
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
 #X coords 0 -1 1 1 200 100 1 100 100;
-#X restore 102 346 pd ardour;
-#N canvas 0 106 1366 662 OSC 0;
+#X restore 1048 305 pd ardour;
+#N canvas 527 171 1366 662 OSC 0;
 #X obj 10 476 udpsend;
-#X obj -279 222 r y;
-#X obj -127 213 r x;
-#X obj 30 210 r l;
 #X obj 216 408 packOSC;
-#X msg -127 236 /x \$1;
-#X msg -279 245 /y \$1;
-#X msg 30 233 /l \$1;
-#X msg 87 307 connect 10.11.1.200 4545;
 #X obj 350 182 r inst_1;
 #X msg 350 205 /load 1;
 #X msg 298 312 disconnect;
@@ -68,6 +53,82 @@
 #X msg 813 265 /load 6;
 #X msg 917 341 /load 0;
 #X obj 917 318 r inst_0;
+#X msg 87 307 connect localhost 4545;
+#X obj -279 222 r y2;
+#X obj -127 213 r x2;
+#X obj 30 210 r l2;
+#X msg -279 245 /y2 \$1;
+#X msg -127 236 /x2 \$1;
+#X msg 30 233 /l2 \$1;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 9 0 21 0;
+#X connect 10 0 11 0;
+#X connect 10 0 4 0;
+#X connect 11 0 21 0;
+#X connect 12 0 4 0;
+#X connect 13 0 1 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 1 0;
+#X connect 17 0 18 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 19 0;
+#X connect 21 0 0 0;
+#X connect 22 0 25 0;
+#X connect 23 0 26 0;
+#X connect 24 0 27 0;
+#X connect 25 0 1 0;
+#X connect 26 0 1 0;
+#X connect 27 0 1 0;
+#X coords 0 -1 1 1 200 200 1 100 100;
+#X restore 594 351 pd OSC;
+#X obj 1262 580 bng 50 250 50 0 inst_2 empty TROLLEY 0 -10 0 10 -261234
+-1 -1;
+#X obj 1244 666 bng 50 250 50 0 inst_4 empty DOGS 0 -10 0 10 -159808
+-1 -1;
+#X obj 1118 655 bng 50 250 50 0 inst_5 empty GLASS 0 -10 0 10 -204786
+-1 -1;
+#X obj 1394 659 bng 50 250 50 0 inst_3 empty BELLS 0 -10 0 10 -4032
+-1 -1;
+#N canvas 527 171 1366 662 OSC 0;
+#X obj 10 476 udpsend;
+#X obj -279 222 r y;
+#X obj -127 213 r x;
+#X obj 30 210 r l;
+#X obj 216 408 packOSC;
+#X msg -127 236 /x \$1;
+#X msg -279 245 /y \$1;
+#X msg 30 233 /l \$1;
+#X obj 350 182 r inst_1;
+#X msg 350 205 /load 1;
+#X msg 298 312 disconnect;
+#X obj 441 187 r inst_2;
+#X msg 441 210 /load 2;
+#X obj 494 242 r inst_3;
+#X msg 494 265 /load 3;
+#X obj 136 277 loadbang;
+#X obj 171 166 bng 30 250 50 0 empty empty RECONNECT_OSC -50 -10 0
+16 -4034 -1 -1;
+#X obj 111 237 delay 100;
+#X obj 248 229 bng 30 250 50 0 empty empty DISCONNECT -50 -10 0 16
+-258113 -1 -1;
+#X msg 584 257 /load 4;
+#X obj 584 234 r inst_4;
+#X obj 699 236 r inst_5;
+#X msg 699 259 /load 5;
+#X obj 813 242 r inst_6;
+#X msg 813 265 /load 6;
+#X msg 917 341 /load 0;
+#X obj 917 318 r inst_0;
+#X msg 87 307 connect localhost 4545;
 #X connect 1 0 6 0;
 #X connect 2 0 5 0;
 #X connect 3 0 7 0;
@@ -75,37 +136,64 @@
 #X connect 5 0 4 0;
 #X connect 6 0 4 0;
 #X connect 7 0 4 0;
-#X connect 8 0 0 0;
-#X connect 9 0 10 0;
-#X connect 10 0 4 0;
-#X connect 11 0 0 0;
-#X connect 12 0 13 0;
-#X connect 13 0 4 0;
-#X connect 14 0 15 0;
-#X connect 15 0 4 0;
-#X connect 16 0 8 0;
-#X connect 17 0 18 0;
-#X connect 17 0 11 0;
-#X connect 18 0 8 0;
-#X connect 19 0 11 0;
-#X connect 20 0 4 0;
-#X connect 21 0 20 0;
-#X connect 22 0 23 0;
-#X connect 23 0 4 0;
-#X connect 24 0 25 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 15 0 27 0;
+#X connect 16 0 17 0;
+#X connect 16 0 10 0;
+#X connect 17 0 27 0;
+#X connect 18 0 10 0;
+#X connect 19 0 4 0;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
+#X connect 22 0 4 0;
+#X connect 23 0 24 0;
+#X connect 24 0 4 0;
 #X connect 25 0 4 0;
-#X connect 26 0 4 0;
-#X connect 27 0 26 0;
+#X connect 26 0 25 0;
+#X connect 27 0 0 0;
 #X coords 0 -1 1 1 200 200 1 100 100;
-#X restore 916 428 pd OSC;
-#X obj 1262 580 bng 50 250 50 0 inst_2 empty TROLLEY 0 -10 0 10 -261234
--1 -1;
-#X obj 985 68 bng 50 250 50 0 inst_4 empty DOGS 0 -10 0 10 -159808
--1 -1;
-#X obj 859 57 bng 50 250 50 0 inst_5 empty GLASS 0 -10 0 10 -204786
--1 -1;
-#X obj 1135 61 bng 50 250 50 0 inst_3 empty BELLS 0 -10 0 10 -4032
--1 -1;
-#X connect 1 0 2 0;
-#X connect 1 1 3 0;
-#X connect 1 2 4 0;
+#X restore 593 25 pd OSC;
+#X obj 135 70 vsl 30 128 0 1 0 0 empty l empty 0 -9 0 10 -203904 -1
+-1 5778 1;
+#X obj 38 203 hsl 128 30 -1 1 0 0 empty x empty -2 -8 0 10 -4032 -1
+-1 7707 1;
+#X obj 90 71 vsl 30 128 -1 1 0 0 empty y empty 0 -9 0 10 -4160 -1 -1
+8148 1;
+#X obj 204 184 s y;
+#X obj 361 190 s x;
+#X obj 518 187 s l;
+#X msg 204 61 devicename /dev/ttyACM0 \, pollintervall 1;
+#X obj 141 371 vsl 30 128 0 1 0 0 empty l2 empty 0 -9 0 10 -203904
+-1 -1 12700 1;
+#X obj 44 504 hsl 128 30 -1 1 0 0 empty x2 empty -2 -8 0 10 -4032 -1
+-1 10988 1;
+#X obj 96 372 vsl 30 128 -1 1 0 0 empty y2 empty 0 -9 0 10 -4160 -1
+-1 10674 1;
+#X msg 210 364 devicename /dev/ttyACM1 \, pollintervall 1;
+#X obj 210 485 s y2;
+#X obj 367 491 s x2;
+#X obj 524 488 s l2;
+#X floatatom 366 324 5 0 0 0 - - -, f 5;
+#X obj 204 89 string_controller;
+#X floatatom 359 10 5 0 0 0 - - -, f 5;
+#X obj 210 390 string_controller;
+#X floatatom 518 44 5 0 0 0 - - -, f 5;
+#X floatatom 521 342 5 0 0 0 - - -, f 5;
+#X connect 17 0 26 0;
+#X connect 21 0 28 0;
+#X connect 25 0 28 1;
+#X connect 26 0 14 0;
+#X connect 26 1 15 0;
+#X connect 26 2 16 0;
+#X connect 27 0 26 1;
+#X connect 28 0 22 0;
+#X connect 28 1 23 0;
+#X connect 28 2 24 0;
+#X connect 29 0 26 2;
+#X connect 30 0 28 2;
